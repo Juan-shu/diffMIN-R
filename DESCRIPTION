@@ -1,15 +1,31 @@
 Package: diffMIN
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Reconstructing Sample-specific Differential Gene Regulatory Networks Based on Mutual Information
+Version: 1.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    c(
+    person(given = "Songwei",
+           family = "Ai",
+           role = c("aut", "cre"),
+           email = "aisongwei@shu.edu.cn"),
+    person(given = "Juan",
+           family = "Zhao",
+           role = "aut")
+    )
+Description: The package is used to reconstruct a sample (or cell) specific differential gene regulatory networks
+    based on mutual information from bulk RNA-seq (including microarrray) or single cell RNA-seq.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 
-    R (>= 2.10)
+    R (>= 3.10),
+    infotheo,
+    methods,
+    reshape2,
+    stats,
+    utils,
+    dplyr,
+    entropy,
+    parallel,
+    pbapply
 LazyData: true
