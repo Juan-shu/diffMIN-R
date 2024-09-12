@@ -6,6 +6,11 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' library(diffMIN)
+#' data(obj)
+#' obj <- transform_EM_to_DM(obj)
+#' }
 transform_EM_to_DM <- function(diffMIN_object){
   # Detecting EM and show related info
   if(is.null(diffMIN_object@net.EM$bg) & is.null(diffMIN_object@net.EM$fg)){

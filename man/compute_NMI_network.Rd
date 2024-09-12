@@ -13,7 +13,8 @@ compute_NMI_network(
   permutation.test.times = 1000,
   file.dir = "./",
   filename = "diffMIN_obj",
-  whether_to_save = TRUE
+  whether_to_save = TRUE,
+  use_adj.p = FALSE
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ compute_NMI_network(
 \item{filename}{A character string specifying the name of the RData file.}
 
 \item{whether_to_save}{A logical value indicating whether to save the \code{diffMIN_obj} to file.}
+
+\item{use_adj.p}{Whether use BH method to adjust p value.}
 }
 \value{
 An updated \code{diffMIN} object with computed networks added to the \code{net.EM} slot.
@@ -55,7 +58,8 @@ obj <- compute_NMI_network(
   permutation.test.times = 1000,
   file.dir = "./",
   filename = "diffMIN_obj",
-  whether_to_save = TRUE
+  whether_to_save = TRUE,
+  use_adj.p = FALSE
 )
 }
 }

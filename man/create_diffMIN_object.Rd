@@ -37,8 +37,10 @@ An object of class \code{diffMIN_object}.
 This function creates an S4 object of class \code{diffMIN_object}.
 }
 \examples{
+\dontrun{
 data(exp)
 exp <- pre_process(exp)
 obj <- create_diffMIN_object(rawdata = exp)
 print(obj)
+}
 }

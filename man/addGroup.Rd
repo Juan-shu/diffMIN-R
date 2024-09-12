@@ -18,10 +18,12 @@ The updated \code{diffMIN_object} S4 object with an additional \code{group} colu
 This function classifies cells (or samples) into background ('bg') and foreground ('fg') groups based on the provided column names.
 }
 \examples{
+\dontrun{
 library(diffMIN)
 library(stringr)
 data(exp)
 obj <- create_diffMIN_object(rawdata = exp)
 group <- colnames(exp)[str_detect(colnames(exp), "Sham")]
 obj <- addGroup(obj, group)
+}
 }

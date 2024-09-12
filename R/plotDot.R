@@ -10,12 +10,13 @@
 #' @export
 #'
 #' @examples
-#' # Example usage
-#' library(ggplot2)
-#' data(exp)
-#' exp <- pre_process(exp)
-#' obj <- create_diffMIN_object(exp)
+#' \dontrun{
+#' library(diffMIN)
+#' data(obj)
+#' obj <- transform_EM_to_DM(obj)
+#' obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
 #' plotDot(obj, reduction = "tsne", group.by = "group")
+#' }
 plotDot <- function(diffMIN_object, reduction = c("umap", "tsne", "pca"), group.by = "group") {
   # Validate reduction argument
   reduction <- match.arg(reduction)
@@ -23,9 +24,11 @@ plotDot <- function(diffMIN_object, reduction = c("umap", "tsne", "pca"), group.
   # Prepare data
   if (reduction == "umap") {
     data <- diffMIN_object@reduction$umap
-  } else if (reduction == "tsne") {
+  }
+  if (reduction == "tsne") {
     data <- diffMIN_object@reduction$tsne
-  } else {
+  }
+  if (reduction == "pca") {
     data <- diffMIN_object@reduction$pca
   }
 

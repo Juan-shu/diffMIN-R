@@ -22,10 +22,11 @@ A heatmap plot created using \code{ComplexHeatmap}.
 This function generates a heatmap based on the specified type of data from a \code{diffMIN_object}.
 }
 \examples{
-# Example usage
-library(ComplexHeatmap)
-data(exp)
-exp <- pre_process(exp)
-obj <- create_diffMIN_object(exp)
+\dontrun{
+library(diffMIN)
+data(obj)
+obj <- transform_EM_to_DM(obj)
+obj <- RunReduc(diffMIN_object = obj, reduction = c("umap", "tsne", "pca"), seed = 1)
 plotHM(obj, group.by = "group", type = "exp")
+}
 }

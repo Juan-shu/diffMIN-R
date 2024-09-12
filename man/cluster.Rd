@@ -27,8 +27,10 @@ The modified \code{diffMIN} object with an additional column \code{cluster} in t
 This function performs clustering on the dimensionality-reduced data stored in a \code{diffMIN} object.
 }
 \examples{
+\dontrun{
 library(diffMIN)
 data(exp)
 obj <- create_diffMIN_object(rawdata = exp)
 obj <- cluster(diffMIN_object = obj, reduction.use = "umap", centers = 3, method = "kmean")
+}
 }

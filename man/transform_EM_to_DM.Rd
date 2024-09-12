@@ -15,3 +15,10 @@ An object of class diffMIN_object with updated degree matrices.
 \description{
 Transform Edge Matrix to Degree Matrix
 }
+\examples{
+\dontrun{
+library(diffMIN)
+data(obj)
+obj <- transform_EM_to_DM(obj)
+}
+}

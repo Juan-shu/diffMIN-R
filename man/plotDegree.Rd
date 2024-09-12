@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotDegree.R
 \name{plotDegree}
 \alias{plotDegree}
-\title{Plot Dotplot for Gene Expression}
+\title{Plot Dot Plot for Node Degree}
 \usage{
 plotDegree(diffMIN_object, feature, reduction = "tsne")
 }
@@ -14,8 +14,17 @@ plotDegree(diffMIN_object, feature, reduction = "tsne")
 \item{reduction}{Character string specifying the reduction result to use. Options are "umap", "tsne", or "pca".}
 }
 \value{
-A ggplot object showing the dotplot of gene expression.
+A ggplot object showing the dotplot of node degree.
 }
 \description{
-Plot Dotplot for Gene Expression
+Plot Dot Plot for Node Degree
+}
+\examples{
+\dontrun{
+library(diffMIN)
+data(obj)
+obj <- transform_EM_to_DM(obj)
+obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
+plotDegree(diffMIN_object = obj, "Nppa", reduction = "tsne")
+}
 }

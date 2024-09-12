@@ -25,6 +25,17 @@ RunReduc(
 
 \item{slot}{Edge matrix or degree matrix, degree matrix is defaulted}
 }
+\value{
+An updated \code{diffMIN} object with reduction value added to the \code{reduction} slot.
+}
 \description{
 Run reduction for diffMIN_object
+}
+\examples{
+\dontrun{
+library(diffMIN)
+data(obj)
+obj <- transform_EM_to_DM(obj)
+obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
+}
 }

@@ -16,7 +16,9 @@ A named vector containing the NMI values for each pair of variables.
 This function computes the normalized mutual information (NMI) between each pair of columns in a data frame or matrix.
 }
 \examples{
+\dontrun{
 # Example usage
 dis <- data.frame(A = sample(1:3, 10, replace = TRUE), B = sample(1:3, 10, replace = TRUE))
 NMI(dis)
+}
 }

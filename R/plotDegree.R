@@ -1,13 +1,20 @@
-#' Plot Dotplot for Gene Expression
+#' Plot Dot Plot for Node Degree
 #'
 #' @param diffMIN_object An object of class `diffMIN_object`.
 #' @param feature Character string specifying the feature (degree) to plot.
 #' @param reduction Character string specifying the reduction result to use. Options are "umap", "tsne", or "pca".
 #'
-#' @return A ggplot object showing the dotplot of gene expression.
+#' @return A ggplot object showing the dotplot of node degree.
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' library(diffMIN)
+#' data(obj)
+#' obj <- transform_EM_to_DM(obj)
+#' obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
+#' plotDegree(diffMIN_object = obj, "Nppa", reduction = "tsne")
+#' }
 plotDegree <- function(diffMIN_object, feature, reduction = "tsne"){
   # Prepare data
   if(reduction == "umap"){

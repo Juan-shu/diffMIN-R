@@ -13,10 +13,12 @@
 #' @return An object of class `diffMIN_object`.
 #' @export
 #' @examples
+#' \dontrun{
 #' data(exp)
 #' exp <- pre_process(exp)
 #' obj <- create_diffMIN_object(rawdata = exp)
 #' print(obj)
+#' }
 create_diffMIN_object <- function(rawdata, dat = data.frame(),
                                   net.DM = data.frame(),
                                   net.EM = list(bg = list(),

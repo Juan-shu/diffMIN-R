@@ -24,10 +24,11 @@ A ggplot object displaying the dot plot.
 This function creates a dot plot of the dimensionality-reduced data in a \code{diffMIN_object} and colors the points based on a specified grouping from the metadata.
 }
 \examples{
-# Example usage
-library(ggplot2)
-data(exp)
-exp <- pre_process(exp)
-obj <- create_diffMIN_object(exp)
+\dontrun{
+library(diffMIN)
+data(obj)
+obj <- transform_EM_to_DM(obj)
+obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
 plotDot(obj, reduction = "tsne", group.by = "group")
+}
 }

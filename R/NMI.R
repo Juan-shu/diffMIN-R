@@ -8,9 +8,11 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Example usage
 #' dis <- data.frame(A = sample(1:3, 10, replace = TRUE), B = sample(1:3, 10, replace = TRUE))
 #' NMI(dis)
+#' }
 NMI <- function(dis,...){
 
   # Compute mutual information

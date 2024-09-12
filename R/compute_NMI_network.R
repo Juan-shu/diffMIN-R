@@ -11,6 +11,7 @@
 #' @param file.dir A character string specifying the directory to save the RData file.
 #' @param filename A character string specifying the name of the RData file.
 #' @param whether_to_save A logical value indicating whether to save the `diffMIN_obj` to file.
+#' @param use_adj.p Whether use BH method to adjust p value.
 #'
 #' @return An updated `diffMIN` object with computed networks added to the `net.EM` slot.
 #' @export
@@ -29,7 +30,8 @@
 #'   permutation.test.times = 1000,
 #'   file.dir = "./",
 #'   filename = "diffMIN_obj",
-#'   whether_to_save = TRUE
+#'   whether_to_save = TRUE,
+#'   use_adj.p = FALSE
 #' )
 #' }
 compute_NMI_network <- function(diffMIN_obj = obj, type = NULL,cores = "Max",
@@ -38,7 +40,8 @@ compute_NMI_network <- function(diffMIN_obj = obj, type = NULL,cores = "Max",
                                 permutation.test.times = 1000,
                                 file.dir = "./",
                                 filename = "diffMIN_obj",
-                                whether_to_save = TRUE){
+                                whether_to_save = TRUE,
+                                use_adj.p = FALSE){
   # Setting cores
   if(cores == "Max"){
     cores <- detectCores()
@@ -138,6 +141,9 @@ compute_NMI_network <- function(diffMIN_obj = obj, type = NULL,cores = "Max",
           result <- diffMIN::permutation_test(a,b,B = permutation.test.times)
           return(result)
         })
+        if(use_adj.p){
+          result <- stats::p.adjust(result, method = "BH")
+        }
         x <- x[result < p.value.cutoff,]
         return(x)
       },cl = cl)
@@ -250,6 +256,9 @@ compute_NMI_network <- function(diffMIN_obj = obj, type = NULL,cores = "Max",
             result <- diffMIN::permutation_test(a,b,B = permutation.test.times)
             return(result)
           })
+          if(use_adj.p){
+            result <- stats::p.adjust(result, method = "BH")
+          }
           x <- x[result < p.value.cutoff,]
           return(x)
         },cl = cl)

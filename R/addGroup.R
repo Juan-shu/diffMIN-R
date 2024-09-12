@@ -9,12 +9,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(diffMIN)
 #' library(stringr)
 #' data(exp)
 #' obj <- create_diffMIN_object(rawdata = exp)
 #' group <- colnames(exp)[str_detect(colnames(exp), "Sham")]
 #' obj <- addGroup(obj, group)
+#' }
 addGroup <- function(diffMIN_object, group) {
   add.group <- ifelse(colnames(diffMIN_object@rawdata) %in% group, "bg", "fg")
   diffMIN_object@meta.data$group <- add.group

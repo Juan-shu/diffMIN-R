@@ -7,10 +7,16 @@
 #' @param perplexity A parameter for tsne
 #' @param ... Some parameters for umap
 #'
-#' @return
+#' @return An updated `diffMIN` object with reduction value added to the `reduction` slot.
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' library(diffMIN)
+#' data(obj)
+#' obj <- transform_EM_to_DM(obj)
+#' obj <- RunReduc(diffMIN_object = obj,reduction = c("umap","tsne","pca"),seed = 1)
+#' }
 RunReduc <- function(diffMIN_object,reduction = c("umap","tsne","pca"),
                      seed = 1, perplexity = 4, ...){
   # Prepare data

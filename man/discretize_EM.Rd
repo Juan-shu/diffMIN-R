@@ -16,9 +16,11 @@ A diffMIN_object S4 Object
 Discretize expression matrix
 }
 \examples{
+\dontrun{
 library(diffMIN)
 data(exp)
 exp <- pre_process(exp)
 obj <- create_diffMIN_Object(rawdata = exp)
 obj <- discretize_EM(obj)
+}
 }

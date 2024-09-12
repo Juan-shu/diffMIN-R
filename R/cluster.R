@@ -11,10 +11,12 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(diffMIN)
 #' data(exp)
 #' obj <- create_diffMIN_object(rawdata = exp)
 #' obj <- cluster(diffMIN_object = obj, reduction.use = "umap", centers = 3, method = "kmean")
+#' }
 cluster <- function(diffMIN_object, reduction.use = c("umap", "tsne", "pca"), centers, method = c("hc", "kmean")) {
 
   # Validate arguments
