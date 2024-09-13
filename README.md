@@ -10,23 +10,12 @@ In the `data` branch of our GitHub repository, we provide two data files for use
 
 ## Using the Data
 
-To download and load these data files in R, follow the steps below:
+```bash
+# Create a directory to store the data files
+mkdir -p data
 
-First, ensure you have the `httr` and `usethis` packages installed. These packages will help you download the data from GitHub and save it locally.
+# Download the data files using wget
+wget -c https://github.com/Juan-shu/diffMIN-R/raw/data/exp.rda -P data/
+wget -c https://github.com/Juan-shu/diffMIN-R/raw/data/obj.rda -P data/
 
-```r
-# Install httr and usethis packages if not already installed
-install.packages(c("httr", "usethis"))
-
-# Load the necessary library
-library(httr)
-
-# exp.rda
-exp_url <- "https://github.com/Juan-shu/diffMIN-R/raw/data/exp.rda"
-GET(exp_url, write_disk("exp.rda", overwrite = TRUE))
-load("exp.rda")
-
-# obj.rda
-obj_url <- "https://github.com/Juan-shu/diffMIN-R/raw/data/obj.rda"
-GET(obj_url, write_disk("obj.rda", overwrite = TRUE))
-load("obj.rda")
+# If you encounter any issues while downloading, please visit the GitHub repository and download the files directly.
