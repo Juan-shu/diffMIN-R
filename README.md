@@ -17,7 +17,7 @@ In conclusion, our method is widely applicable and performs well in cell cluster
 
 ## Help 
 
-For detailed documentation on functions and usage, refer to https://juan-shu.github.io/diffMIN-R/diffMIN_tutorial.html
+For detailed documentation on functions and usage, refer to https://juan-shu.github.io/diffMIN-R/diffMIN%20tutorial.html
 
 ## Installation
 
